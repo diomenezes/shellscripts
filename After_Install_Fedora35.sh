@@ -386,7 +386,7 @@ if [[ "${UID}" -eq 0 ]]
       
      clear
 			echo " Instalar os seguintes Softwares: "
-      echo " teams"			
+      			echo " teams"			
 			echo " FoxIT "
 			echo ""
 			echo "Ja Instalou os programas acima?"
