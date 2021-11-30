@@ -406,6 +406,7 @@ if [[ "${UID}" -eq 0 ]]
 
 				dnf install gnome-shell-extension-dash-to-dock -y 2>> $LOG/Erro.log
 				dnf install gnome-extensions-app -y 2>> $LOG/Erro.log
+				dnf install gnome-shell-extension-appindicator -y 2>> $LOG/Erro.log
 
 
 				echo " Blyr by yozoon"
