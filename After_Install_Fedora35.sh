@@ -408,7 +408,7 @@ if [[ "${UID}" -eq 0 ]]
 				dnf install gnome-extensions-app -y 2>> $LOG/Erro.log
 				dnf install gnome-shell-extension-appindicator -y 2>> $LOG/Erro.log
 
-
+				clear
 				echo " Blyr by yozoon"
 				echo " Audio Output Switcher"
 				echo " Coverflow Alt-Tab"
