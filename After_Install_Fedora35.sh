@@ -241,8 +241,8 @@ if [[ "${UID}" -eq 0 ]]
 			sleep 3
 			dnf install nautilus-dropbox -y  2>> $LOG/Erro.log
 
-			clear
-
+			
+			# clear
 			# SOPHOS ANTI VIRUS
 			# sudo /opt/sophos-av/bin/savdstatus
 			# https://secure2.sophos.com/en-us/pages/downloadredirect.aspx?downloadKey=8f2ca4a9-f6b1-44be-816c-d7d08461b795&
@@ -376,15 +376,20 @@ if [[ "${UID}" -eq 0 ]]
 			
 			clear
 			dnf install mesa-dri-drivers.i686 mesa-libGL.i686 xorg-x11-drv-intel -y 2>> $LOG/Erro.log
+			clear
 			dnf install xorg-x11-drv-nvidia-libs.i686 -y 2>> $LOG/Erro.log			
 			sleep 8
-		
+			clear
+			
 			dnf install https://www.r-studio.com/downloads/RLinux5_x64.rpm -y 2>> $LOG/Erro.log
+			clear
 			dnf install https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm -y 2>> $LOG/Erro.log
+			clear
 			dnf install https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/10702/wps-office-11.1.0.10702.XA-1.x86_64.rpm -y 2>> $LOG/Erro.log
+			clear
 			dnf install https://zoom.us/client/latest/zoom_x86_64.rpm -y 2>> $LOG/Erro.log
-      
-     clear
+			
+     			clear
 			echo " Instalar os seguintes Softwares: "
       			echo " teams"			
 			echo " FoxIT "
@@ -398,17 +403,22 @@ if [[ "${UID}" -eq 0 ]]
 			then
 				clear
 				echo "##########################################"
-				echo " Instalacao Manual da Extensions: " 
+				echo " Instalacao de Extensions: " 
 				echo "##########################################"
 				echo ""
 				echo " Instalacao de Extensions:" 
 				echo ""
 
+				clear
 				dnf install gnome-shell-extension-dash-to-dock -y 2>> $LOG/Erro.log
+				clear
 				dnf install gnome-extensions-app -y 2>> $LOG/Erro.log
+				clear
 				dnf install gnome-shell-extension-appindicator -y 2>> $LOG/Erro.log
 
 				clear
+				echo " Instalacao MANULA das Extensions:" 
+				echo ""
 				echo " Blyr by yozoon"
 				echo " Audio Output Switcher"
 				echo " Coverflow Alt-Tab"
@@ -473,7 +483,7 @@ if [[ "${UID}" -eq 0 ]]
 			# Terminada 1 Fase da Instalacao
 
 			echo "Fim da 1 Fase da Instalacao"
-			sleep 10
+			sleep 15
 			chown $USUARIO.$USUARIO $LOG/Erro.log
 			chmod 755 $LOG/Erro.log
 			cat $LOG/Erro.log | less
