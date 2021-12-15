@@ -185,6 +185,7 @@ if [[ "${UID}" -eq 0 ]]
 			echo "##########################################"
 			sleep 3
 			dnf install cabextract lzip p7zip p7zip-plugins unrar -y  2>> $LOG/Erro.log
+			dnf install pigz pbzip2 pxz -y  2>> $LOG/Erro.log
 
 			clear
 			echo "##########################################"
