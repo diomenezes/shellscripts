@@ -376,6 +376,9 @@ if [[ "${UID}" -eq 0 ]]
 			
 			
 			clear
+			dnf install fedora-workstation-repositories -y 2>> $LOG/Erro.log
+			dnf config-manager rpmfusion-nonfree-nvidia-driver --set-enabled 2>> $LOG/Erro.log
+			dnf install akmod-nvidia acpi xorg-x11-drv-nvidia-cuda vulkan -y 2>> $LOG/Erro.logsudi 
 			dnf install mesa-dri-drivers.i686 mesa-libGL.i686 xorg-x11-drv-intel -y 2>> $LOG/Erro.log
 			clear
 			dnf install xorg-x11-drv-nvidia-libs.i686 -y 2>> $LOG/Erro.log			
