@@ -62,7 +62,6 @@ echo ""
 	then
 		sudo dnf update -y && sudo dnf install -y akmod-nvidia
 		sudo dnf install -y xorg-x11-drv-nvidia-power
-		sudo dnf install -y xorg-x11-drv-nvidia-power 
 		sudo systemctl enable nvidia-{suspend,resume,hibernate}
 		sudo systemctl set-default graphical.target && init 6
 	else
