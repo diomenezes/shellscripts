@@ -311,10 +311,10 @@ sleep 3
 clear
 echo "##########################################"
 echo ""
-echo " Instalacao WPS"
+echo " Instalacao OnlyOffice"
 echo ""
 echo "##########################################"
-flatpak install flathub com.wps.Office -y 2>> $LOG/Erro.log
+flatpak install flathub org.onlyoffice.desktopeditors -y 2>> $LOG/Erro.log
 sleep 3
 
 clear
@@ -334,26 +334,86 @@ echo ""
 echo "##########################################"
 flatpak install flathub com.github.IsmaelMartinez.teams_for_linux
 
+clear
+echo "##########################################"
+echo ""
+echo " Instalacao Lutris"
+echo ""
+echo "##########################################"
+flatpak install flathub net.lutris.Lutris
+
 
 clear
 echo "##########################################"
-echo " Instalacao de Extensions: " 
+echo ""
+echo " Instalacao Evolution"
+echo " "
+echo "##########################################"
+flatpak install flathub org.gnome.Evolution
+
+clear
+echo "##########################################"
+echo " Instalacao de Remmia: " 
+echo "##########################################"
+echo " "
+flatpak install flathub org.remmina.Remmina
+sleep 3
+
+clear
+echo "##########################################"
+echo " Instalacao de Flameshot: " 
 echo "##########################################"
 echo ""
-echo " Instalacao de Extensions:" 
+flatpak install flathub org.flameshot.Flameshot
+sleep 3
+
+clear
+echo "##########################################"
+echo " Instalacao de Wireshark: " 
+echo "##########################################"
 echo ""
-
-clear
-dnf install gnome-shell-extension-dash-to-dock -y 2>> $LOG/Erro.log
+flatpak install flathub org.wireshark.Wireshark
 sleep 3
 
 clear
-dnf install gnome-extensions-app -y 2>> $LOG/Erro.log
+echo "##########################################"
+echo " Instalacao de gnome-extensions-app " 
+echo "##########################################"
+echo ""
+sudo dnf install gnome-extensions-app -y 2>> $LOG/Erro.log
 sleep 3
 
 clear
-dnf install gnome-shell-extension-appindicator -y 2>> $LOG/Erro.log
+echo "##########################################"
+echo " Instalacao de extension-dash-to-doc " 
+echo "##########################################"
+echo ""
+sudo dnf install gnome-shell-extension-dash-to-dock -y 2>> $LOG/Erro.log
 sleep 3
+
+
+clear
+echo "##########################################"
+echo " Instalacao de extension-appindicator " 
+echo "##########################################"
+echo ""
+sudo dnf install gnome-shell-extension-appindicator -y 2>> $LOG/Erro.log
+sleep 3
+
+clear
+echo "##########################################"
+echo " Instalacao do system-monitoring-center " 
+echo "##########################################"
+echo ""
+flatpak install flathub io.github.hakandundar34coding.system-monitoring-center
+
+clear
+echo "##########################################"
+echo " Instalacao de Zmap " 
+echo "##########################################"
+echo ""
+sudo dnf install zmap -y 
+
 
 clear
 echo " Instalacao MANUAL das Extensions:" 
@@ -369,7 +429,7 @@ echo " Transparent Window Moving"
 echo " User Themes by fmuellner"
 echo " Applications Overview Tooltip by RaphaelR"
 echo "Aperte ENTER para continuar " 
-read $CONTINUAR
+read CONTINUAR
 
 clear
 echo "Fim da da Instalacao"
