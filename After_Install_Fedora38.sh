@@ -432,7 +432,7 @@ sleep 3
  echo " "
  sudo dnf config-manager rpmfusion-nonfree-nvidia-driver --set-enabled 2>> /tmp/ErroAfterInstall.log
  echo " "
- sudo dnf update -y && sudo dnf upgrate -y
+ sudo dnf update -y && sudo dnf upgrade -y
  sleep 3
 
  clear
