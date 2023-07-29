@@ -242,6 +242,20 @@ sleep 3
 sudo -i 
 
 
+echo "##########################################"
+echo "##########################################"
+echo ""
+echo "${DAY}"
+echo ""
+echo "Ola ${LOGNAME}, Bem Vindo ao ${HOST} "
+echo "A versao do Kernel: $(uname -r)"
+echo ""
+echo "##########################################"
+echo "##########################################"
+echo ""
+sleep 8
+
+
  clear
  echo "##########################################"
  echo " Atualizacao do Sistema"
