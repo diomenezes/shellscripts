@@ -250,23 +250,6 @@ flatpak install flathub io.github.hakandundar34coding.system-monitoring-center -
 sleep 3
 
 
-sudo su root
-
-
-echo "##########################################"
-echo "##########################################"
-echo ""
-echo "${DAY}"
-echo ""
-echo "Ola ${LOGNAME}, Bem Vindo ao ${HOST} "
-echo "A versao do Kernel: $(uname -r)"
-echo ""
-echo "##########################################"
-echo "##########################################"
-echo ""
-sleep 8
-
-
  clear
  echo "##########################################"
  echo " Atualizacao do Sistema"
@@ -276,7 +259,7 @@ sleep 8
  sudo dnf update -y && sudo dnf upgrade -y
  sleep 5
 
-
+ clear
  echo "######################################################"
  echo " Instalacao fedora-repositories - rpmfusion-free"
  echo "######################################################"
@@ -284,6 +267,7 @@ sleep 8
  echo " "
  dnf install -y  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 2>> /tmp/ErroAfterInstall.log
 
+ clear
  echo "######################################################"
  echo " Instalacao fedora-repositories - rpmfusion-nonfree"
  echo "######################################################"
@@ -461,7 +445,7 @@ sleep 8
  echo " "
  sudo dnf config-manager rpmfusion-nonfree-nvidia-driver --set-enabled 2>> /tmp/ErroAfterInstall.log
  echo " "
- sudo dnf update -y ; sudo dnf upgrate -y
+ sudo dnf update -y && sudo dnf upgrate -y
  sleep 3
 
  clear
@@ -533,6 +517,15 @@ sleep 8
  sleep 3
  echo " "
  sudo dnf install https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan-3.9.1-1.x86_64.rpm -y 2>> /tmp/ErroAfterInstall.log
+ sleep 3
+
+ clear
+ echo "##########################################"
+ echo " Intalando o virtualbox"
+ echo "##########################################"
+ sleep 3
+ echo " "
+https://download.virtualbox.org/virtualbox/7.0.10/VirtualBox-7.0-7.0.10_158379_fedora36-1.x86_64.rpm
  sleep 3
 
  clear
