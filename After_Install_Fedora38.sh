@@ -408,15 +408,6 @@ sleep 3
 
  clear
  echo "##########################################"
- echo " Instalacao do VirtualBox"
- echo "##########################################"
- sleep 3
- echo " "
- sudo dnf install virtualbox -y 2>> /tmp/ErroAfterInstall.log
- sleep 3
-
- clear
- echo "##########################################"
  echo " Instalacao do dnfdragora"
  echo "##########################################"
  sleep 3
