@@ -110,6 +110,15 @@ flatpak install flathub org.videolan.VLC -y 2>> $LOG/Erro.log
 clear
 echo "##########################################"
 echo ""
+echo " Intalando o Angry IP"
+echo ""
+echo "##########################################"
+sleep 3
+https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan-3.9.1-1.x86_64.rpm -y 2>> $LOG/Erro.log
+
+clear
+echo "##########################################"
+echo ""
 echo " Intalando o neofetch"
 echo ""
 echo "##########################################"
