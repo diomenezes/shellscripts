@@ -512,7 +512,7 @@ sleep 3
  echo "##########################################"
  sleep 3
  echo " "
-https://download.virtualbox.org/virtualbox/7.0.10/VirtualBox-7.0-7.0.10_158379_fedora36-1.x86_64.rpm
+ sudo dnf install https://download.virtualbox.org/virtualbox/7.0.10/VirtualBox-7.0-7.0.10_158379_fedora36-1.x86_64.rpm -y 2>> /tmp/ErroAfterInstall.log
  sleep 3
 
  clear
@@ -560,7 +560,7 @@ https://download.virtualbox.org/virtualbox/7.0.10/VirtualBox-7.0-7.0.10_158379_f
  sudo dnf install https://cdn.insynchq.com/builds/linux/insync-3.8.6.50504-fc38.x86_64.rpm -y 2>> /tmp/ErroAfterInstall.log
  sleep 3
 
-
+ clear
  echo "#####################################################"
  echo " ATENCAO A LINHA ABAIXO SERA ADD no /etc/hosts.denny "
  echo " 	 ALL:ALL  	"
