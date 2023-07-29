@@ -5,19 +5,15 @@ clear
 # Tela de bem Vindas ao Sistema
 # Criando Variaveis de Ambiente
 
-DAY=$(date)
-HOST=$(uname -n)
-LOG=$(pwd)
-USUARIO=$(logname)
 
 echo $DAY >> /tmp/ErroAfterInstall.log
 
 echo "##########################################"
 echo "##########################################"
 echo ""
-echo "${DAY}"
+echo "$(date)"
 echo ""
-echo "Ola ${LOGNAME}, Bem Vindo ao ${HOST} "
+echo "Ola $(logname), Bem Vindo ao $(uname -n) "
 echo "A versao do Kernel: $(uname -r)"
 echo ""
 echo "##########################################"
