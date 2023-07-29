@@ -10,6 +10,8 @@ HOST=$(uname -n)
 LOG=$(pwd)
 USUARIO=$(logname)
 
+echo $DAY >> /tmp/ErroAfterInstall.log
+
 echo "##########################################"
 echo "##########################################"
 echo ""
@@ -187,6 +189,15 @@ sleep 3
 
 clear
 echo "##########################################"
+echo " Instalacao do Steam"
+echo "##########################################"
+sleep 3
+echo " "
+flatpak install flathub com.valvesoftware.Steam -y 2>> /tmp/ErroAfterInstall.log
+sleep 3
+
+clear
+echo "##########################################"
 echo " Instalacao Lutris"
 echo "##########################################"
 sleep 3
@@ -239,7 +250,7 @@ flatpak install flathub io.github.hakandundar34coding.system-monitoring-center -
 sleep 3
 
 
-sudo -i 
+sudo su root
 
 
 echo "##########################################"
@@ -296,7 +307,7 @@ sleep 8
  echo " Atualizacao do Sistema"
  echo "##########################################"
  sleep 3
- dnf update -y && sudo dnf upgrade -y
+ sudo dnf update -y && sudo dnf upgrade -y
  sleep 5
 
 
@@ -340,15 +351,6 @@ sleep 8
  sleep 3
  echo " "
  sudo dnf install testdisk -y  2>> /tmp/ErroAfterInstall.log
- sleep 3
-
- clear
- echo "##########################################"
- echo " Regulando a Swap --> swappiness = 10"
- echo "##########################################"
- sleep 3
- echo " "
- sudo echo  vm.swappiness = 10 >> /etc/sysctl.conf 2>> /tmp/ErroAfterInstall.log
  sleep 3
 
  clear
@@ -415,14 +417,6 @@ sleep 8
  sudo dnf install smartmontools -y 2>> /tmp/ErroAfterInstall.log
  sleep 3
 
- echo "#####################################################"
- echo " ATENCAO A LINHA ABAIXO SERA ADD no /etc/hosts.denny "
- echo " 	 ALL:ALL  	"
- echo "######################################################"
- sleep 3
- echo " "
- sudo echo " ALL:ALL" >> /etc/hosts.deny 2>> /tmp/ErroAfterInstall.log
-
  clear
  echo "##########################################"
  echo " Intalando o nmap"
@@ -438,7 +432,7 @@ sleep 8
  echo "##########################################"
  sleep 3
  echo " "
- sudo dnf install VirtualBox -y 2>> /tmp/ErroAfterInstall.log
+ sudo dnf install virtualbox -y 2>> /tmp/ErroAfterInstall.log
  sleep 3
 
  clear
@@ -461,25 +455,7 @@ sleep 8
 
  clear
  echo "##########################################"
- echo " Instalacao do Steam"
- echo "##########################################"
- sleep 3
- echo " "
- flatpak install flathub com.valvesoftware.Steam -y 2>> /tmp/ErroAfterInstall.log
- sleep 3
-
- clear
- echo "##########################################"
- echo " Instalacao de Zmap " 
- echo "##########################################"
- sleep 3
- echo " "
- sudo dnf install zmap -y  2>> /tmp/ErroAfterInstall.log
- sleep 3
-
- clear
- echo "##########################################"
- echo " Instalacao  nvidia-driver"
+ echo " Instalacao  nvidia-driver  1...4 "
  echo "##########################################"
  sleep 3
  echo " "
@@ -489,18 +465,30 @@ sleep 8
  sleep 3
 
  clear
+ echo "##########################################"
+ echo " Instalacao  nvidia-driver  2...4 "
+ echo "##########################################"
+ sleep 3
  echo " "
  sudo dnf install akmod-nvidia acpi xorg-x11-drv-nvidia-cuda vulkan -y 2>> /tmp/ErroAfterInstall.log 
  sleep 3
 
  clear
+ echo "##########################################"
+ echo " Instalacao  nvidia-driver  3...4 "
+ echo "##########################################"
+ sleep 3
  echo " "
  sudo dnf install mesa-dri-drivers.i686 mesa-libGL.i686 xorg-x11-drv-intel -y 2>> /tmp/ErroAfterInstall.log
  sleep 3
 
  clear
+ echo "##########################################"
+ echo " Instalacao  nvidia-driver  4...4 "
+ echo "##########################################"
+ sleep 3
  echo " "
- sudo dnf install xorg-x11-drv-nvidia-libs.i686 -y 2>> /tmp/ErroAfterInstall.log			
+ sudo dnf install xorg-x11-drv-nvidia-libs.i686 -y 2>> /tmp/ErroAfterInstall.log
  sleep 3
 
  clear
@@ -567,15 +555,6 @@ sleep 8
 
  clear
  echo "##########################################"
- echo " Instalacao do insync"
- echo "##########################################"
- sleep 3
- echo " "
- sudo dnf install https://cdn.insynchq.com/builds/linux/insync-3.8.6.50504-fc38.x86_64.rpm -y 2>> /tmp/ErroAfterInstall.log
- sleep 3
-
- clear
- echo "##########################################"
  echo " Instalacao r-studio"
  echo "##########################################"
  sleep 3
@@ -590,6 +569,33 @@ sleep 8
  sleep 3
  echo " "
  sudo dnf install https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm -y 2>> /tmp/ErroAfterInstall.log
+ sleep 3
+
+ clear
+ echo "##########################################"
+ echo " Instalacao do insync"
+ echo "##########################################"
+ sleep 3
+ echo " "
+ sudo dnf install https://cdn.insynchq.com/builds/linux/insync-3.8.6.50504-fc38.x86_64.rpm -y 2>> /tmp/ErroAfterInstall.log
+ sleep 3
+
+
+ echo "#####################################################"
+ echo " ATENCAO A LINHA ABAIXO SERA ADD no /etc/hosts.denny "
+ echo " 	 ALL:ALL  	"
+ echo "######################################################"
+ sleep 3
+ echo " "
+ sudo echo " ALL:ALL" >> /etc/hosts.deny 2>> /tmp/ErroAfterInstall.log
+
+ clear
+ echo "##########################################"
+ echo " Regulando a Swap --> swappiness = 10"
+ echo "##########################################"
+ sleep 3
+ echo " "
+ sudo echo vm.swappiness = 10 >> /etc/sysctl.conf 2>> /tmp/ErroAfterInstall.log
  sleep 3
 
 
@@ -614,7 +620,7 @@ sleep 8
  echo " "
  echo "Fim da da Instalacao"
  sleep 10
- sudo -i
+ sudo su root
  echo " "
  sudo chown $USUARIO:$USUARIO /tmp/ErroAfterInstall.log
  sudo chmod 755 /tmp/ErroAfterInstall.log
