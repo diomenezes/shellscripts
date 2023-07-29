@@ -567,7 +567,7 @@ https://download.virtualbox.org/virtualbox/7.0.10/VirtualBox-7.0-7.0.10_158379_f
  echo "######################################################"
  sleep 3
  echo " "
- sudo echo " ALL:ALL" >> /etc/hosts.deny 2>> /tmp/ErroAfterInstall.log
+ sudo bash -c "echo 'ALL:ALL' >> /etc/hosts.deny" 2>> /tmp/ErroAfterInstall.log
 
  clear
  echo "##########################################"
@@ -575,7 +575,7 @@ https://download.virtualbox.org/virtualbox/7.0.10/VirtualBox-7.0-7.0.10_158379_f
  echo "##########################################"
  sleep 3
  echo " "
- sudo echo vm.swappiness = 10 >> /etc/sysctl.conf 2>> /tmp/ErroAfterInstall.log
+ sudo bash -c "echo 'vm.swappiness = 10' >> /etc/sysctl.conf" 2>> /tmp/ErroAfterInstall.log
  sleep 3
 
 
