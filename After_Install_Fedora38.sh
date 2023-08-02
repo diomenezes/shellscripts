@@ -360,6 +360,25 @@ sleep 3
  sudo dnf install gcc -y  2>> /tmp/ErroAfterInstall.log
  sleep 3
 
+
+ clear
+ echo "##########################################"
+ echo " Intalando o python3"
+ echo "##########################################"
+ sleep 3
+ echo " "
+ sudo dnf install python python3-pip -y
+ sudo dnf install python3-devel -y
+ sudo dnf install python3-vituralenv -y
+ sudo dnf install python-numpy -y
+ sudo dnf install python-scipy -y
+ sudo dnf install python-matplotlib -y
+ sudo dnf install python-pandas -y
+ sudo dnf install python-scikit-learn -y
+ sudo dnf install python-flask -y
+ sudo dnf install python-django -y
+ sudo dnf install python-requests -y
+
  clear
  echo "##########################################"
  echo " Intalando o rar"
@@ -423,6 +442,11 @@ sleep 3
  echo " "
  sudo dnf install google-chrome-stable -y 2>> /tmp/ErroAfterInstall.log
  sleep 3
+
+sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+sudo dnf install -y lame\* --exclude=lame-devel
+sudo dnf group upgrade --with-optional Multimedia -y
+sudo dnf install -y 'google-roboto*' 'mozilla-fira*' fira-code-fonts
 
  clear
  echo "##########################################"
