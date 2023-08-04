@@ -448,6 +448,7 @@ sudo dnf install -y lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia -y
 sudo dnf install -y 'google-roboto*' 'mozilla-fira*' fira-code-fonts
 
+
  clear
  echo "##########################################"
  echo " Instalacao  nvidia-driver  1...4 "
@@ -484,6 +485,8 @@ sudo dnf install -y 'google-roboto*' 'mozilla-fira*' fira-code-fonts
  sleep 3
  echo " "
  sudo dnf install xorg-x11-drv-nvidia-libs.i686 -y 2>> /tmp/ErroAfterInstall.log
+ sleep 3
+ sudo dnf swap mesa-vdpau-drivers-freeworld mesa-vdpau-drivers -y
  sleep 3
 
  clear
